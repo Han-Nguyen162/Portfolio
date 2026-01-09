@@ -346,45 +346,29 @@ footer p {
     height: 90%;
 }
 
-.project-img {
-    border-radius: 2rem;
-    width: 100%;       /* chiếm toàn bộ chiều ngang của card */
-    height: 250px;     /* chiều cao cố định, tất cả card giống nhau */
-    object-fit: cover; /* ảnh sẽ tự cắt vừa khung, không méo */
-    display: block;    /* bỏ khoảng trắng phía dưới */
-    margin: 0 auto;    /* căn giữa nếu cần */
+..project-img {
+  width: 100%;               /* chiếm toàn bộ chiều ngang của card */
+  height: auto;              /* chiều cao tự động theo tỷ lệ ảnh */
+  max-height: 250px;         /* giới hạn chiều cao tối đa */
+  object-fit: cover;         /* cắt ảnh vừa khung, không méo */
+  border-radius: 1rem;       /* bo góc nhẹ */
+  display: block;
+  margin: 0 auto;
 }
+
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  grid-template-columns: repeat(3, 1fr); /* 2 cột */
   gap: 20px;
   justify-items: center;
 }
 
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cột */
+  grid-template-columns: repeat(3, 1fr); /* 2 cột */
   gap: 2rem;
   justify-items: center;
-}
-
-.projects-container .details-container:nth-child(3) {
-  grid-column: 1 / span 2; /* project số 3 chiếm 2 cột */
-  justify-self: center;
-}
-
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(2, auto); /* thay vì 1fr */
-  gap: 2rem;  /* khoảng cách giữa 2 card */
-  justify-content: center; /* canh giữa toàn bộ */
-}
-
-.projects-container .details-container:nth-child(3) {
-  grid-column: 1 / span 2;
-  justify-self: center;
-  margin-top: 2rem;       /* đẩy project 3 xuống thêm */
 }
 
 
@@ -394,6 +378,10 @@ footer p {
   nav {
     display: none; /* Ẩn nav desktop */
   }
+  
+.project-img {
+  max-height: 180px;
+}
 
   #hamburger-nav {
     display: flex;
